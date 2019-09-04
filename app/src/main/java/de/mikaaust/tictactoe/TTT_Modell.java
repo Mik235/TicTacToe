@@ -1,9 +1,22 @@
 package de.mikaaust.tictactoe;
 
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class TTT_Modell {
+    public class TTT_Modell {
+        private Button[][] buttons = new Button[3][3];
+
+        private boolean playeroneturn = true;
+
+        private int roundcount;
+
+        private int PlayeronePoints;
+        private int PlayertwoPoints;
+
+        private TextView textViewPlayerone;
+        private TextView textViewPlayertwo;
     private boolean checkforwin(){
         String[][] field = new String[3][3];
         for (int i = 0; i< 3; i++){
@@ -52,14 +65,21 @@ public class TTT_Modell {
         updatePointsText();
         resetBoard();
     }
-    public  void Gamerst(){
-        MainActivity.setPlayeronePoints(0);
-        MainActivity.setPlayertwoPoints(0);
+    public static void Gamerst(){
+        PlayertwoPoints = 0;
+        PlayeronePoints = 0;
         updatePointsText();
         resetBoard();
     }
-    private void updatePointsText(){
-        textViewPlayerone.setText("Spieler 1: " + PlayeronePoints);
-        textViewPlayertwo.setText("Spieler 2: " + PlayertwoPoints);
-    }
+        private void resetBoard(){
+            for(int i = 0; i<3;i++){
+                for (int j=0;j<3;j++){
+                    buttons[i][j].setText("");
+                }
+            }
+
+            roundcount=0;
+            playeroneturn = true;
+
+        }
 }

@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TTT_Modell.Gamerst();
+                TTT_Modell.resetGame();
             }
         });
     }
@@ -138,19 +138,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toast.makeText(this,"Draw",Toast.LENGTH_LONG).show();
         resetBoard();
     }
-
-
-    private void resetBoard(){
-        for(int i = 0; i<3;i++){
-            for (int j=0;j<3;j++){
-                buttons[i][j].setText("");
-            }
-        }
-
-        roundcount=0;
-        playeroneturn = true;
-
+    private void updatePointsText(){
+        textViewPlayerone.setText("Spieler 1: " + PlayeronePoints);
+        textViewPlayertwo.setText("Spieler 2: " + PlayertwoPoints);
     }
+
+
 
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
