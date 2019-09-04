@@ -1,6 +1,8 @@
 package de.mikaaust.tictactoe;
 
-public class MainActivity{}
+public class MainActivity{
+
+}
 
 
 
