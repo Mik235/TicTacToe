@@ -6,6 +6,15 @@ import android.widget.Toast;
 
 
     public class TTT_Modell {
+        public TTT_Modell(boolean playeroneturn, int roundcount, int playeronePoints, int playertwoPoints, TextView textViewPlayerone, TextView textViewPlayertwo) {
+            this.playeroneturn = playeroneturn;
+            this.roundcount = roundcount;
+            PlayeronePoints = playeronePoints;
+            PlayertwoPoints = playertwoPoints;
+            this.textViewPlayerone = textViewPlayerone;
+            this.textViewPlayertwo = textViewPlayertwo;
+        }
+
         private Button[][] buttons = new Button[3][3];
 
         private boolean playeroneturn = true;
@@ -54,20 +63,20 @@ import android.widget.Toast;
     }
     private void playeronewins(){
         PlayeronePoints++;
-        Toast.makeText(this,"Player 1 wins!",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Spieler 1 Gewinnt",Toast.LENGTH_SHORT).show();
         updatePointsText();
         resetBoard();
     }
 
     private void playertwowins(){
         PlayertwoPoints++;
-        Toast.makeText(this,"Player 2 wins!",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Spieler 2 Gewinnt",Toast.LENGTH_SHORT).show();
         updatePointsText();
         resetBoard();
     }
-    public static void Gamerst(){
-        PlayertwoPoints = 0;
-        PlayeronePoints = 0;
+    public  void Gamerst(){
+        MainActivity.setPlayertwoPoints(0);
+        MainActivity.setPlayeronePoints(0);
         updatePointsText();
         resetBoard();
     }
@@ -81,5 +90,9 @@ import android.widget.Toast;
             roundcount=0;
             playeroneturn = true;
 
+        }
+        private void updatePointsText(){
+            textViewPlayerone.setText("Spieler 1: " + PlayeronePoints);
+            textViewPlayertwo.setText("Spieler 2: " + PlayertwoPoints);
         }
 }

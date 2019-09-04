@@ -138,10 +138,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toast.makeText(this,"Draw",Toast.LENGTH_LONG).show();
         resetBoard();
     }
-    private void updatePointsText(){
-        textViewPlayerone.setText("Spieler 1: " + PlayeronePoints);
-        textViewPlayertwo.setText("Spieler 2: " + PlayertwoPoints);
-    }
+
 
 
 
