@@ -1,4 +1,4 @@
-package de.mikaaust.myapplication;
+package de.mikaaust.tictactoe;
 
 import android.content.Context;
 
