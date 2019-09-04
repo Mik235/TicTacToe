@@ -52,10 +52,14 @@ public class TTT_Modell {
         updatePointsText();
         resetBoard();
     }
-    private void resetGame(){
-        PlayertwoPoints = 0;
-        PlayeronePoints = 0;
+    public  void Gamerst(){
+        MainActivity.setPlayeronePoints(0);
+        MainActivity.setPlayertwoPoints(0);
         updatePointsText();
         resetBoard();
+    }
+    private void updatePointsText(){
+        textViewPlayerone.setText("Spieler 1: " + PlayeronePoints);
+        textViewPlayertwo.setText("Spieler 2: " + PlayertwoPoints);
     }
 }

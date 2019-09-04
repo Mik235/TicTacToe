@@ -43,9 +43,65 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TTT_Modell.resetGame();
+                TTT_Modell.Gamerst();
             }
         });
+    }
+
+    public Button[][] getButtons() {
+        return buttons;
+    }
+
+    public void setButtons(Button[][] buttons) {
+        this.buttons = buttons;
+    }
+
+    public boolean isPlayeroneturn() {
+        return playeroneturn;
+    }
+
+    public void setPlayeroneturn(boolean playeroneturn) {
+        this.playeroneturn = playeroneturn;
+    }
+
+    public int getRoundcount() {
+        return roundcount;
+    }
+
+    public void setRoundcount(int roundcount) {
+        this.roundcount = roundcount;
+    }
+
+    public int getPlayeronePoints() {
+        return PlayeronePoints;
+    }
+
+    public void setPlayeronePoints(int playeronePoints) {
+        PlayeronePoints = playeronePoints;
+    }
+
+    public int getPlayertwoPoints() {
+        return PlayertwoPoints;
+    }
+
+    public void setPlayertwoPoints(int playertwoPoints) {
+        PlayertwoPoints = playertwoPoints;
+    }
+
+    public TextView getTextViewPlayerone() {
+        return textViewPlayerone;
+    }
+
+    public void setTextViewPlayerone(TextView textViewPlayerone) {
+        this.textViewPlayerone = textViewPlayerone;
+    }
+
+    public TextView getTextViewPlayertwo() {
+        return textViewPlayertwo;
+    }
+
+    public void setTextViewPlayertwo(TextView textViewPlayertwo) {
+        this.textViewPlayertwo = textViewPlayertwo;
     }
 
     @Override
@@ -82,10 +138,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toast.makeText(this,"Draw",Toast.LENGTH_LONG).show();
         resetBoard();
     }
-    private void updatePointsText(){
-        textViewPlayerone.setText("Spieler 1: " + PlayeronePoints);
-        textViewPlayertwo.setText("Spieler 2: " + PlayertwoPoints);
-    }
+
 
     private void resetBoard(){
         for(int i = 0; i<3;i++){
